@@ -71,3 +71,24 @@
 .keyum-menu-panel a { display: block; padding: 15px 0; color: #111 !important; border-bottom: 1px solid rgba(0,0,0,.1); font-size: 16px; text-decoration: none; }
 .keyum-menu-close { appearance: none; border: 0; background: transparent; font-size: 34px; line-height: 1; padding: 0; cursor: pointer; color: #111; }
 @media (min-width: 769px) { .keyum-menu-panel { width: 380px; } }
+
+.owl-carousel { position: relative; }
+.owl-carousel .owl-stage { will-change: transform; }
+.owl-carousel .owl-nav .owl-prev,
+.owl-carousel .owl-nav .owl-next,
+.owl-carousel .owl-controls .owl-prev,
+.owl-carousel .owl-controls .owl-next {
+  position: absolute !important;
+  top: 50% !important;
+  z-index: 60 !important;
+  width: 64px !important;
+  height: 96px !important;
+  margin-top: -48px !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+}
+.owl-carousel .owl-nav .owl-prev,
+.owl-carousel .owl-controls .owl-prev { left: 0 !important; }
+.owl-carousel .owl-nav .owl-next,
+.owl-carousel .owl-controls .owl-next { right: 0 !important; left: auto !important; }
+.owl-carousel .owl-dots .owl-dot { cursor: pointer !important; pointer-events: auto !important; }

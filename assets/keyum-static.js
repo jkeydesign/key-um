@@ -30,4 +30,70 @@
     if(!trigger) return;
     e.preventDefault(); e.stopPropagation(); if(e.stopImmediatePropagation) e.stopImmediatePropagation(); openMenu();
   }, true);
+
+  function toArray(list){ return Array.prototype.slice.call(list || []); }
+  function itemWidth(item, root){
+    if(!item) return root.getBoundingClientRect().width || window.innerWidth || 1;
+    var inline = parseFloat(item.style.width || '');
+    if(inline > 0) return inline;
+    var rect = item.getBoundingClientRect();
+    if(rect.width > 0) return rect.width;
+    return root.getBoundingClientRect().width || window.innerWidth || 1;
+  }
+  function initOwlCarousel(root){
+    if(!root || root.dataset.keyumCarousel === 'ready') return;
+    var stage = root.querySelector('.owl-stage');
+    var items = toArray(root.querySelectorAll('.owl-item'));
+    if(!stage || items.length < 2) return;
+    var realIndexes = [];
+    items.forEach(function(item, index){ if(!item.classList.contains('cloned')) realIndexes.push(index); });
+    if(!realIndexes.length) realIndexes = items.map(function(_, index){ return index; });
+    var activeIndex = items.findIndex(function(item){ return item.classList.contains('active') && !item.classList.contains('cloned'); });
+    if(activeIndex < 0) activeIndex = items.findIndex(function(item){ return item.classList.contains('active'); });
+    var position = Math.max(0, realIndexes.indexOf(activeIndex >= 0 ? activeIndex : realIndexes[0]));
+    var dots = toArray(root.querySelectorAll('.owl-dot'));
+    var thumbs = toArray(root.querySelectorAll('.owl-thumb-item'));
+
+    function sync(nextPosition, animate){
+      position = (nextPosition + realIndexes.length) % realIndexes.length;
+      var itemIndex = realIndexes[position];
+      var width = itemWidth(items[itemIndex], root);
+      items.forEach(function(item){ item.classList.remove('active', 'center', 'current'); });
+      items[itemIndex].classList.add('active', 'current');
+      stage.style.transition = animate === false ? 'none' : 'transform 260ms ease';
+      stage.style.transform = 'translate3d(' + (-itemIndex * width) + 'px, 0px, 0px)';
+      dots.forEach(function(dot, index){ dot.classList.toggle('active', index === position); });
+      thumbs.forEach(function(thumb, index){ thumb.classList.toggle('current', index === position); thumb.classList.toggle('active', index === position); });
+      root.setAttribute('data-keyum-slide-index', String(position));
+    }
+    function handle(delta){
+      return function(event){
+        event.preventDefault();
+        event.stopPropagation();
+        if(event.stopImmediatePropagation) event.stopImmediatePropagation();
+        sync(position + delta, true);
+      };
+    }
+    var prev = root.querySelector('.owl-prev');
+    var next = root.querySelector('.owl-next');
+    if(prev) prev.addEventListener('click', handle(-1), true);
+    if(next) next.addEventListener('click', handle(1), true);
+    dots.forEach(function(dot, index){
+      dot.setAttribute('role', 'button');
+      dot.setAttribute('tabindex', '0');
+      dot.addEventListener('click', function(event){
+        event.preventDefault();
+        event.stopPropagation();
+        if(event.stopImmediatePropagation) event.stopImmediatePropagation();
+        sync(index, true);
+      }, true);
+      dot.addEventListener('keydown', function(event){ if(event.key === 'Enter' || event.key === ' ') sync(index, true); });
+    });
+    root.dataset.keyumCarousel = 'ready';
+    sync(position, false);
+    window.addEventListener('resize', function(){ sync(position, false); });
+  }
+  function initCarousels(){ toArray(document.querySelectorAll('.owl-carousel')).forEach(initOwlCarousel); }
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initCarousels);
+  else initCarousels();
 })();
