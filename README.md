@@ -1,19 +1,24 @@
 # Key-Um static copy
 
-This repository contains a static GitHub Pages-ready copy of the currently visible `https://key-um.imweb.me/` page.
+This repository is a static GitHub Pages-ready copy of the visible `https://key-um.imweb.me/` site.
 
-At the time of capture, the public site returned only the Imweb hosting expiration notice. No original marketing images, page sections, or body content were publicly available to copy.
+- 48 desktop HTML pages are available at the project root.
+- 48 mobile HTML pages are available under `m/`.
+- Downloaded images, fonts, CSS, and other static assets live under `assets/mirror/`.
+- Responsive routing sends small screens to the matching `m/` page and desktop screens back to the root page.
 
-## Preview locally
-
-Open `index.html` directly in a browser, or run the included static server:
+## Local preview
 
 ```powershell
-cmd /c npm run preview
+npm run preview
 ```
 
-Then visit `http://127.0.0.1:4173/`.
+Then open `http://127.0.0.1:4173/`.
 
-## Deploy
+## Deployment
 
-Push this folder to a GitHub repository named for the site, then set GitHub Pages to deploy from GitHub Actions.
+GitHub Pages is configured through `.github/workflows/pages.yml`. Push `main`, then GitHub Actions will publish the site.
+
+## Notes
+
+This is a static mirror. Visual pages, text, images, layout, and responsive page variants are preserved, but Imweb backend features such as login, forms, search, comments, chat, and admin-only behavior need a separate backend or service integration if you want them to work as live features.

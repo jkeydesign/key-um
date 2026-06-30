@@ -1,0 +1,20 @@
+/* latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: url("./4de7a6db11ef3a79.eot");
+  src: url("./2069467e1d17c299.eot") format("embedded-opentype"), url("./d835a58c3b8c709b.woff2") format("woff2"), url("./1d6a99d741015f71.woff") format("woff"), url("./e9040bb06cb57f01.ttf") format("truetype");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+  font-display: swap;
+}
+/* latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: url("./5ea948b109eb2c54.eot");
+  src: url("./c03bbcf8e434a1f4.eot") format("embedded-opentype"), url("./e16e7be3d80bcf82.woff2") format("woff2"), url("./81f4a92de487e6d3.woff") format("woff"), url("./9422f034685443a7.ttf") format("truetype");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+  font-display: swap;
+}

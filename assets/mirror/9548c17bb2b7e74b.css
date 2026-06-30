@@ -1,0 +1,71 @@
+/*
+Copyright (c) 2021 Kil Hyung-jin, with Reserved Font Name Pretendard.
+https://github.com/orioncactus/pretendard
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+*/
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 900;
+	font-display: swap;
+	src: local('Pretendard Black'), url("./c6d5f314ba60c90d.woff2") format('woff2'), url("./a9d36f8e611a2c91.woff") format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 800;
+	font-display: swap;
+	src: local('Pretendard ExtraBold'), url("./13c773b487925256.woff2") format('woff2'), url("./3431ea8791a4c234.woff") format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 700;
+	font-display: swap;
+	src: local('Pretendard Bold'), url("./02b78a2f168c4b51.woff2") format('woff2'), url("./5838368ca1b9c584.woff") format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 600;
+	font-display: swap;
+	src: local('Pretendard SemiBold'), url("./8cea518556ab7473.woff2") format('woff2'), url("./9391a56131a46e3e.woff") format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 500;
+	font-display: swap;
+	src: local('Pretendard Medium'), url("./d6157dd362735201.woff2") format('woff2'), url("./a38edfc24d0efc42.woff") format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 400;
+	font-display: swap;
+	src: local('Pretendard Regular'), url("./ea83fbc5c257855e.woff2") format('woff2'), url("./0cca79067702bfc2.woff") format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 300;
+	font-display: swap;
+	src: local('Pretendard Light'), url("./1c47cea8facf5462.woff2") format('woff2'), url("./02d6e19a8f253413.woff") format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 200;
+	font-display: swap;
+	src: local('Pretendard ExtraLight'), url("./e2461661c0bab491.woff2") format('woff2'), url("./fc557415a36e7608.woff") format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 100;
+	font-display: swap;
+	src: local('Pretendard Thin'), url("./fdaf16c1f75b4e22.woff2") format('woff2'), url("./d860dcfae29373c2.woff") format('woff');
+}

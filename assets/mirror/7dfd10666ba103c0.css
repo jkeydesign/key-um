@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  font-weight: 400;
+  src: url("./9d987d2d0c3c0107.ttf") format('truetype');
+}
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  font-weight: 700;
+  src: url("./2a8a5d7ea0f99dba.ttf") format('truetype');
+}
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  font-weight: 800;
+  src: url("./f2a549d7b1753a66.ttf") format('truetype');
+}
